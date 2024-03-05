@@ -6,11 +6,15 @@ import { useRouter } from "vue-router";
 const fecha = ref(null);
 const nombre = ref("");
 const apellido = ref("");
-
+const opciones = { day: "2-digit", month: "2-digit", year: "numeric" };
+const fechaFormato = ref(null);
 const router = useRouter();
+
 function guardar() {
-  const datos = ref([nombre, apellido, fecha]);
-  router.push;
+  // fechaFormato.value = fecha.value.toLocaleDateString("es-ES", opciones);
+  // console.log(fechaFormato.value);
+  // router.push("/perfil/" + nombre.value);
+  router.push("/perfil/" + fecha.value);
 }
 </script>
 <template>

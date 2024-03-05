@@ -1,7 +1,14 @@
 <script setup>
+import { ref, defineProps } from "vue";
+
+const fechaPerfil = defineProps(["fecha"]);
+const fechaHoy = new Date();
+const edad = ref(null);
+
+
 </script>
 <template>
-  <v-card class="mx-auto" max-width="434" rounded="0">
+  <!-- <v-card class="mx-auto" max-width="434" rounded="0">
     <v-img
       height="100%"
       cover
@@ -12,9 +19,9 @@
       </v-avatar>
       <v-list-item
         class="text-white"
-        title="Marcus Obrien"
-        subtitle="Network Engineer"
+        title="nombreCompleto"
+        subtitle="fecha"
       ></v-list-item>
     </v-img>
-  </v-card>
+  </v-card> -->
 </template>

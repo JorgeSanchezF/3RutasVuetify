@@ -2,9 +2,10 @@
 import { ref } from "vue";
 
 const datos = ref([nombre, apellido, fechaNacimiento]);
+const usuario = ref([]);
 
 function enviar() {
-    
+  usuario.value.push(datos);
 }
 </script>
 <template>
@@ -36,7 +37,7 @@ function enviar() {
               @input="menu = false"
             ></v-date-picker>
           </v-menu>
-          <v-btn type="submit" color="primary" @click="enviar()"> Enviar</v-btn>
+          <v-btn type="submit" color="primary" @click="enviar()">Guardar</v-btn>
         </v-form>
       </v-col>
     </v-row>

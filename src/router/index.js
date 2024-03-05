@@ -11,9 +11,10 @@ const router = createRouter({
       component: Inicio
     },
     {
-      path: '/perfil',
+      path: '/perfil/:fecha',
       name: 'perfil',
-      component: Perfil
+      component: Perfil,
+      props: true
     }
   ]
 })
