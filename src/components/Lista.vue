@@ -33,9 +33,8 @@ const listado = [
 const idEnviar = ref(null);
 function verDetalle(id) {
   // console.log(id);
-  idEnviar.value = id;
 
-  router.push("/detalle/" + idEnviar.value);
+  router.push("/detalle/" + id.value);
 }
 </script>
 <template>

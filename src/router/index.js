@@ -30,7 +30,7 @@ const router = createRouter({
       name: 'listado',
       component: Listado,
     }, {
-      path: '/detalle/:idEnviar',
+      path: '/detalle/:id',
       name: 'detalle',
       component: Detalle
     }

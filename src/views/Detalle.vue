@@ -1,64 +1,70 @@
 <script setup>
 import Nav from "@/components/Nav.vue";
-import { onMounted, ref } from "vue";
-
-const idProp=defineProps('idEnviar');
-
-
-console.log(idProp.value);
+import { defineProps } from "vue";
 
 const listado = [
   {
     id: 1,
+
     nombre: "Pepe",
+
     color: "rojo",
   },
+
   {
     id: 2,
+
     nombre: "Luis",
+
     color: "Azul",
   },
+
   {
     id: 3,
+
     nombre: "Marta",
+
     color: "Verde",
   },
+
   {
     id: 4,
+
     nombre: "Jose",
+
     color: "Amarillo",
   },
+
   {
     id: 5,
+
     nombre: "Alicia",
+
     color: "Morado",
   },
 ];
-const encontrado = ref(false);
-const indice = ref(0);
-const nombre = ref("");
-const color = ref("");
-// function comprobarId() {
-//   do {
-//     if (listado[indice.value].id == props.id) {
-//       nombre.value = listado[indice.value].nombre;
-//       color.value = listado[indice.value].color;
-//     } else {
-//       indice.value = indice.value + 1;
-//     }
-//   } while (encontrado == false);
-// }
-// onload(comprobarId);
-// nombre.value=listado[prop.id].nombre;
-// color.value=listado[prop.id].color
+
+const props = defineProps({
+  id: {
+    type: Number,
+
+    required: true,
+  },
+});
+
+const idProp = props.id;
+
+const item = listado.find((i) => i.id === idProp);
 </script>
 <template>
-  <Nav />
-  <!-- <h1>{{ prop.id }}</h1> -->
+  <Nav></Nav>
+  <div class="card" v-if="item">
     <div class="card-body">
-      <input class="card-title" v-model="nombre" readonly></input>
-      <input class="card-text" v-model="color" readonly></input>
+      <h2 class="card-title">{{ item.nombre }}</h2>
+
+      <p class="card-text">{{ item.color }}</p>
     </div>
+  </div>
 </template>
 <style scoped>
 .card-body {

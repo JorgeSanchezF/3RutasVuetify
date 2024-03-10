@@ -15,11 +15,6 @@ const navigate = (route) => {
       >
       <v-col>
         <v-list-item
-          ><v-btn @click="navigate('/perfil')">Perfil</v-btn></v-list-item
-        ></v-col
-      >
-      <v-col>
-        <v-list-item
           ><v-btn @click="navigate('/configuracion')">Configuracion</v-btn></v-list-item
         ></v-col
       >
